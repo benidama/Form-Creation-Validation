@@ -1,6 +1,7 @@
 async function fetchUserData() {
   const apiUrl = "https://jsonplaceholder.typicode.com/users";
   const dataContainer = document.getElementById("api-data");
+  const response = document.getElementById("api-data");
 
   let myPromise = new Promise(function (resolve) {
     let req = new XMLHttpRequest();
@@ -11,10 +12,17 @@ async function fetchUserData() {
           resolve(req.response);
         }
       } catch {
-        resolve("File not Found");
+        resolve("Failed to load user data.");
       }
     };
     req.send();
   });
-  document.getElementById("demo").innerHTML = await myPromise;
+  response.innerHTML = await myPromise;
+  const user = await response.json();
+  dataContainer.innerHTML = "";
+  const userList = document.body.createElement("ul");
+  user.forEach((e) => "<li>e</li>");
+  userList.appendChild(dataContainer);
 }
+
+document.addEventListener("DOMContentLoaded", fetchUserData);
