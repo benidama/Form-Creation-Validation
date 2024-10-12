@@ -20,7 +20,7 @@ async function fetchUserData() {
   response.innerHTML = await myPromise;
   const user = await response.json();
   dataContainer.innerHTML = "";
-  const userList = document.body.createElement("ul");
+  const userList = document.createElement("ul");
   user.forEach((e) => "<li>e</li>");
   userList.appendChild(dataContainer);
 }
