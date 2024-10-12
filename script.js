@@ -13,15 +13,15 @@ function SubmitForm(event) {
   event.preventDefault();
   if (username.length < 3) {
     isValid = false;
-    console.log("Your username too low");
+    console.log(messages.push("Your username too low"));
   }
-  if (!email.includes("@ ,.")) {
+  if (!email.includes("@") && !email.includes(".")) {
     isValid = false;
-    console.log("inter your valid email please");
+    console.log(messages.push("inter your valid email please"));
   }
   if (password.length < 8) {
     isValid = false;
-    console.log("inter your comment please");
+    console.log(messages.push("inter your comment please"));
   }
 
   feedbackDiv.style.display = "block";
