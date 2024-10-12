@@ -6,7 +6,9 @@ const password = document.getElementById("password").value.trim();
 const isValid = true;
 const messages = [];
 
-document.addEventListener("DOMContentLoaded", (event) => {
+document.addEventListener("DOMContentLoaded", SubmitForm);
+
+function SubmitForm(event) {
   log.textContent += "DOMContentLoaded\n";
   event.preventDefault();
   if (username.length < 3) {
@@ -32,4 +34,4 @@ document.addEventListener("DOMContentLoaded", (event) => {
       "API (https://jsonplaceholder.typicode.com/users) <br> and display the names of the";
     feedbackDiv.style.color = "#dc3545";
   }
-});
+}
