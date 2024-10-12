@@ -26,12 +26,11 @@ function SubmitForm(event) {
 
   feedbackDiv.style.display = "block";
   if (isValid === true) {
-    feedbackDiv.textContent = "Registration successful!";
+    feedbackDiv.innerHTML = "Registration successful!";
     feedbackDiv.style.color = "#28a745";
   }
   if (isValid !== true) {
-    feedbackDiv.textContent =
-      "API (https://jsonplaceholder.typicode.com/users) <br> and display the names of the";
+    feedbackDiv.innerHTML = messages.join("<br>");
     feedbackDiv.style.color = "#dc3545";
   }
 }
